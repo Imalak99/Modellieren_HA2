@@ -1,4 +1,4 @@
-package json;
+package json.utils;
 
 import java.io.IOException;
 import java.nio.file.Files;

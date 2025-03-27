@@ -3,7 +3,7 @@ package app;
 import java.util.ArrayList;
 import java.util.List;
 
-import json.JsonUtils;
+import json.utils.JsonUtils;
 import model.Wand;
 
 public class JsonTest {
@@ -23,7 +23,7 @@ public class JsonTest {
 //		geschossdecken = JsonUtils.erzeugeGeschossdeckenListeAusJson(dateipfadDataGeschossdecken);
 //
 
-		String dateipfadDataWaende = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\DataWaende2.json";
+		String dateipfadDataWaende = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\DataWaende.json";
 
 		List<Wand> waende = new ArrayList<>();
 
