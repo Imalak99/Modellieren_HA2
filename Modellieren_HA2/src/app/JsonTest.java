@@ -1,6 +1,12 @@
 package app;
 
-public class Application {
+import java.util.ArrayList;
+import java.util.List;
+
+import json.JsonUtils;
+import model.Wand;
+
+public class JsonTest {
 
 	public static void main(String[] args) {
 
@@ -16,11 +22,15 @@ public class Application {
 //		waende = JsonUtils.erzeugeWandListeAusJson(dateipfadDataWaende);
 //		geschossdecken = JsonUtils.erzeugeGeschossdeckenListeAusJson(dateipfadDataGeschossdecken);
 //
-//		Model model1 = new Model(waende, geschossdecken, daecher);
-//		System.out.println(model1);
-//		System.out.println(daecher);
-//		System.out.println(waende);
-//		System.out.println(geschossdecken);
+
+		String dateipfadDataWaende = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\DataWaende2.json";
+
+		List<Wand> waende = new ArrayList<>();
+
+		waende = JsonUtils.erzeugeWandListeAusJson(dateipfadDataWaende);
+
+		System.out.println(waende);
+
 	}
 
 }

@@ -2,15 +2,16 @@ package model;
 
 public class Wand {
 
-	private String ifcID;
+	private String id;
 	private double hoehe;
 	private double dicke;
-	private int anzahlFenster;
+	private double anzahlFenster;
 	private double nettoVolumen;
 	private Material material;
 
-	public Wand(String ifcID, double hoehe, double dicke, int anzahlFenster, double nettoVolumen, Material material) {
-		this.ifcID = ifcID;
+	public Wand(String ifcID, double hoehe, double dicke, double anzahlFenster, double nettoVolumen,
+			Material material) {
+		this.id = ifcID;
 		this.hoehe = hoehe;
 		this.dicke = dicke;
 		this.anzahlFenster = anzahlFenster;
@@ -19,7 +20,7 @@ public class Wand {
 	}
 
 	public String ifcID() {
-		return ifcID;
+		return id;
 	}
 
 	public double getHoehe() {
@@ -30,7 +31,7 @@ public class Wand {
 		return dicke;
 	}
 
-	public int getAnzahlFenster() {
+	public double getAnzahlFenster() {
 		return anzahlFenster;
 	}
 
@@ -44,7 +45,7 @@ public class Wand {
 
 	@Override
 	public String toString() {
-		return "Wand:\n IFC ID: " + ifcID + "\n Höhe: " + hoehe + "\n Dicke: " + dicke + "\n Anzahl Fenster: "
+		return "Wand:\n IFC ID: " + id + "\n Höhe: " + hoehe + "\n Dicke: " + dicke + "\n Anzahl Fenster: "
 				+ anzahlFenster + "\n Netto Volumen: " + nettoVolumen + "\n Material: " + material.getMaterialName();
 	}
 

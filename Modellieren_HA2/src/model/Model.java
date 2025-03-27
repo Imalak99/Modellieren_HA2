@@ -28,7 +28,8 @@ public class Model {
 
 	@Override
 	public String toString() {
-		return "Gebäudemodel: \n Wandliste: " + this.wandListe;
+		return "Gebäudemodel: \n Wandliste: " + this.wandListe + "\n Geschossdeckenliste: " + this.geschossdeckenListe
+				+ "\n Dachliste: " + this.dachListe;
 	}
 
 }

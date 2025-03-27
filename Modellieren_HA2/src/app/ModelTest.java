@@ -9,7 +9,7 @@ import model.Material;
 import model.Model;
 import model.Wand;
 
-public class Test {
+public class ModelTest {
 
 	public static void main(String[] args) {
 		Material beton = new Material("Beton C25/30");
