@@ -1,7 +1,9 @@
 package json.utils;
 
 import java.io.IOException;
+import java.nio.file.DirectoryStream;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
@@ -19,15 +21,35 @@ import model.Wand;
 
 public class JsonUtils {
 
-	public static void copyJsonToPackage(String sourcePath, String targetPackage) throws IOException {
-		// Zielpfad innerhalb des Projekts definieren
-		String projectPath = System.getProperty("user.dir"); // Root-Verzeichnis des Projekts
-		String targetPath = projectPath + "/src/" + targetPackage.replace(".", "/") + "/DataDaecher.json";
+	public static void copyJsonFilesToPackage(String sourceFolder) {
+		String projectPath = System.getProperty("user.dir"); // Eclipse-Projektverzeichnis
+		String targetPath = Paths.get(projectPath, "src", "json", "files").toString();
 
-		// Datei kopieren
-		Files.copy(Paths.get(sourcePath), Paths.get(targetPath), StandardCopyOption.REPLACE_EXISTING);
+		try {
+			Files.createDirectories(Paths.get(targetPath)); // Zielverzeichnis erstellen
 
-		System.out.println("Datei erfolgreich kopiert nach: " + targetPath);
+			try (DirectoryStream<Path> stream = Files.newDirectoryStream(Paths.get(sourceFolder))) { // Alle Dateien im
+																										// Quellordner
+				for (Path file : stream) {
+					if (Files.isRegularFile(file)) {
+						Path targetFile = Paths.get(targetPath, file.getFileName().toString());
+
+						// Kopieren der Datei
+						Files.copy(file, targetFile, StandardCopyOption.REPLACE_EXISTING);
+						System.out.println("Datei kopiert: " + targetFile);
+
+						// Umbenennen in .json, wenn noch nicht vorhanden
+						if (!targetFile.getFileName().toString().endsWith(".json")) {
+							Path renamedFile = Paths.get(targetPath, targetFile.getFileName().toString() + ".json");
+							Files.move(targetFile, renamedFile, StandardCopyOption.REPLACE_EXISTING);
+							System.out.println("Datei umbenannt in: " + renamedFile);
+						}
+					}
+				}
+			}
+		} catch (IOException e) {
+			System.err.println("Fehler beim Kopieren oder Umbenennen der Dateien: " + e.getMessage());
+		}
 	}
 
 //	public static boolean jsonValidator(String jsonFilePath) {
