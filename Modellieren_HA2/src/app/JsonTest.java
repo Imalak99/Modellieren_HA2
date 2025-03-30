@@ -14,9 +14,9 @@ public class JsonTest {
 	public static void main(String[] args) {
 
 		// Erzeuge Model 1
-		String dateipfadDataDaecher = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataDaecher.json";
-		String dateipfadDataWaende = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataWaende.json";
-		String dateipfadDataGeschossdecken = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataGeschossdecken.json";
+		String dateipfadDataDaecher = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataDaecherOfficeBuilding.json";
+		String dateipfadDataWaende = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataWaendeOfficeBuilding.json";
+		String dateipfadDataGeschossdecken = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataGeschossdeckenOfficeBuilding.json";
 
 		List<Dach> daecher = new ArrayList<>();
 		List<Wand> waende = new ArrayList<>();
@@ -32,8 +32,8 @@ public class JsonTest {
 //		System.out.println("----------------------");
 //		System.out.println(geschossdecken);
 
-		Model modelFZKHaus = new Model(waende, geschossdecken, daecher);
-		System.out.println(modelFZKHaus);
+		Model modelOfficeBuilding = new Model(waende, geschossdecken, daecher);
+		System.out.println(modelOfficeBuilding);
 
 	}
 

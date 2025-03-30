@@ -49,4 +49,19 @@ public class Wand {
 				+ anzahlFenster + "\n Netto Volumen: " + nettoVolumen + "\n Material: " + material.getMaterialName();
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		Wand other = (Wand) obj;
+		return Double.compare(hoehe, other.hoehe) == 0 && Double.compare(dicke, other.dicke) == 0
+				&& Double.compare(anzahlFenster, other.anzahlFenster) == 0
+				&& Double.compare(nettoVolumen, other.nettoVolumen) == 0 && id.equals(other.id)
+				&& material.equals(other.material);
+	}
+
 }

@@ -36,4 +36,19 @@ public class Geschossdecke {
 				+ "\n Material: " + material.getMaterialName();
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		Geschossdecke other = (Geschossdecke) obj;
+		return Double.compare(this.dicke, other.dicke) == 0 &&
+			   Double.compare(this.nettoVolumen, other.nettoVolumen) == 0 &&
+			   this.ifcID.equals(other.ifcID) &&
+			   this.material.equals(other.material);
+	}
+
 }

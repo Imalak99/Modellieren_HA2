@@ -17,4 +17,15 @@ public class Material {
 		return "Material: " + materialName;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null || getClass() != obj.getClass()) {
+			return false;
+		}
+		Material other = (Material) obj;
+		return this.materialName.equals(other.materialName);
+	}
 }

@@ -16,6 +16,18 @@
             <version>2.15.2</version>
         </dependency>
         
+        <dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>2.0.9</version>
+</dependency>
+        
+        <dependency>
+    <groupId>com.networknt</groupId>
+    <artifactId>json-schema-validator</artifactId>
+    <version>1.0.82</version>
+</dependency>
+        
         <!-- Jackson Core -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -28,6 +40,11 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
             <version>2.15.2</version>
+        </dependency>
+        <dependency>
+        	<groupId>modeling.xml</groupId>
+        	<artifactId>modeling.xml</artifactId>
+        	<version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

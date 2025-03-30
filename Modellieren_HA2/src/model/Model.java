@@ -32,4 +32,22 @@ public class Model {
 				+ "\n Dachliste: " + this.dachListe;
 	}
 
+	public boolean equals(Model other) {
+		if (other == null) {
+			System.out.println("Das Modell ist null");
+			return false;
+		}
+
+		boolean check = this.wandListe.equals(other.wandListe)
+				&& this.geschossdeckenListe.equals(other.geschossdeckenListe) && this.dachListe.equals(other.dachListe);
+		if (check) {
+			System.out.println("Die Modelle sind gleich");
+		} else {
+			System.out.println("Die Modelle sind nicht gleich");
+			// hier könnte noch eine methode aufgerufen werden, welche die unterschiede
+			// ausgibt.
+		}
+		return check;
+	}
+
 }
