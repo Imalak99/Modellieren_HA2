@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "patternProperties": {
+    "^[0-9]+$": {
+      "type": "object",
+      "properties": {
+        "Ifc Material": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "Dicke": {
+          "type": "number"
+        },
+        "Volumen": {
+          "type": "number"
+        }
+      },
+      "required": ["Ifc Material", "ID", "Dicke", "Volumen"],
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
