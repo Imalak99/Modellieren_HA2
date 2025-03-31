@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import json.utils.JsonUtils;
+import json.utils.JsonValidator;
 import model.Dach;
 import model.Geschossdecke;
 import model.Model;
@@ -22,6 +23,14 @@ public class ApplicationFzkHaus {
 		String dateipfadDataWaende = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataWaendeFzkHaus.json";
 		String dateipfadDataGeschossdecken = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataGeschossdeckenFzkHaus.json";
 
+		// Validierung der JSON Dateien
+		String schemaFilePathDaecher = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\schema\\JsonSchemaDaecher.json";
+		String schemaFilePathWaende = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\schema\\JsonSchemaWaende.json";
+		String schemaFilePathGeschossdecken = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\schema\\JsonSchemaGeschossdecken.json";
+		JsonValidator.validateJson(dateipfadDataDaecher, schemaFilePathDaecher);
+		JsonValidator.validateJson(dateipfadDataWaende, schemaFilePathWaende);
+		JsonValidator.validateJson(dateipfadDataGeschossdecken, schemaFilePathGeschossdecken);
+
 		List<Dach> daecher = new ArrayList<>();
 		List<Wand> waende = new ArrayList<>();
 		List<Geschossdecke> geschossdecken = new ArrayList<>();
@@ -37,6 +46,11 @@ public class ApplicationFzkHaus {
 		String dateipfadDataWaende_veraendert = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataWaendeFzkHaus_veraendert.json";
 		String dateipfadDataGeschossdecken_veraendert = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataGeschossdeckenFzkHaus_veraendert.json";
 
+		// Validierung der JSON Dateien
+		JsonValidator.validateJson(dateipfadDataDaecher_veraendert, schemaFilePathDaecher);
+		JsonValidator.validateJson(dateipfadDataWaende_veraendert, schemaFilePathWaende);
+		JsonValidator.validateJson(dateipfadDataGeschossdecken_veraendert, schemaFilePathGeschossdecken);
+
 		List<Dach> daecher_veraendert = new ArrayList<>();
 		List<Wand> waende_veraendert = new ArrayList<>();
 		List<Geschossdecke> geschossdecken_veraendert = new ArrayList<>();
@@ -51,6 +65,11 @@ public class ApplicationFzkHaus {
 		String dateipfadDataDaecher_unveraendert = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataDaecherFzkHaus_unveraendert.json";
 		String dateipfadDataWaende_unveraendert = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataWaendeFzkHaus_unveraendert.json";
 		String dateipfadDataGeschossdecken_unveraendert = "Z:\\git\\Modellieren_HA2\\Modellieren_HA2\\src\\json\\files\\DataGeschossdeckenFzkHaus_unveraendert.json";
+
+		// Validierung der JSON Dateien
+		JsonValidator.validateJson(dateipfadDataDaecher_unveraendert, schemaFilePathDaecher);
+		JsonValidator.validateJson(dateipfadDataWaende_unveraendert, schemaFilePathWaende);
+		JsonValidator.validateJson(dateipfadDataGeschossdecken_unveraendert, schemaFilePathGeschossdecken);
 
 		List<Dach> daecher_unveraendert = new ArrayList<>();
 		List<Wand> waende_unveraendert = new ArrayList<>();
