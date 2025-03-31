@@ -10,6 +10,12 @@ import model.Geschossdecke;
 import model.Model;
 import model.Wand;
 
+/**
+ * Diese Klasse Importiert Json Dateien, die Daten aus dem IFC Modell FZK Haus
+ * enthalten, validiert die Json Dateien anhand der entsprechenden Schemata,
+ * erzeugt ein Gebäudemodel anhand der Daten und vergleicht drei Gebäudemodelle
+ * miteinander.
+ */
 public class ApplicationFzkHaus {
 
 	public static void main(String[] args) {

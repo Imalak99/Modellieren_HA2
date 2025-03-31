@@ -20,7 +20,12 @@ import model.Material;
 import model.Wand;
 
 public class JsonUtils {
-
+	/**
+	 * Kopiert alle JSON-Dateien aus einem Quellordner in das Package-Verzeichnis
+	 * und benennt sie ggf. in ".json" um.
+	 *
+	 * @param sourceFolder Der Pfad zum Quellordner mit den JSON-Dateien.
+	 */
 	public static void copyJsonFilesToPackage(String sourceFolder) {
 		String projectPath = System.getProperty("user.dir"); // Eclipse-Projektverzeichnis
 		String targetPath = Paths.get(projectPath, "src", "json", "files").toString();
@@ -52,29 +57,12 @@ public class JsonUtils {
 		}
 	}
 
-//	public static boolean jsonValidator(String jsonFilePath) {
-//		ObjectMapper objectMapper = new ObjectMapper();
-//
-//		try {
-//			// Versuche, das JSON in eine Map<String, Dach> zu deserialisieren
-//			Map<String, Dach> dacher = objectMapper.readValue(new File(jsonFilePath),
-//					new TypeReference<Map<String, Dach>>() {
-//					});
-//
-//			// Durch die Map iterieren und jedes Dach-Objekt validieren
-//			for (Map.Entry<String, Dach> entry : dacher.entrySet()) {
-//				Dach dach = entry.getValue();
-//				System.out.println("JSON validiert! ID: " + dach.getID() + ", Neigung: " + dach.getNeigung());
-//			}
-//
-//			return true; // JSON ist gültig
-//		} catch (IOException e) {
-//			System.out.println("Fehler beim Lesen oder Verarbeiten der Datei: " + e.getMessage());
-//		}
-//
-//		return false; // JSON ist ungültig
-//	}
-
+	/**
+	 * Erstellt eine Liste von Dach-Objekten aus einer JSON-Datei.
+	 *
+	 * @param dateipfadDataDaecher Der Pfad zur JSON-Datei mit den Dachdaten.
+	 * @return Eine Liste von Dach-Objekten.
+	 */
 	public static ArrayList<Dach> erzeugeDachListeAusJson(String dateipfadDataDaecher) {
 		ArrayList<Dach> dachListe = new ArrayList<>();
 		try {
@@ -106,6 +94,12 @@ public class JsonUtils {
 		return dachListe;
 	}
 
+	/**
+	 * Erstellt eine Liste von Wand-Objekten aus einer JSON-Datei.
+	 *
+	 * @param dateipfadDataWaende Der Pfad zur JSON-Datei mit den Wanddaten.
+	 * @return Eine Liste von Wand-Objekten.
+	 */
 	public static List<Wand> erzeugeWandListeAusJson(String dateipfadDataWaende) {
 		ArrayList<Wand> wandListe = new ArrayList<>();
 		try {
@@ -142,6 +136,13 @@ public class JsonUtils {
 		return wandListe;
 	}
 
+	/**
+	 * Erstellt eine Liste von Geschossdecken-Objekten aus einer JSON-Datei.
+	 *
+	 * @param dateipfadDataGeschossdecken Der Pfad zur JSON-Datei mit den
+	 *                                    Geschossdeckendaten.
+	 * @return Eine Liste von Geschossdecke-Objekten.
+	 */
 	public static List<Geschossdecke> erzeugeGeschossdeckenListeAusJson(String dateipfadDataGeschossdecken) {
 		ArrayList<Geschossdecke> geschossdeckenListe = new ArrayList<>();
 		try {

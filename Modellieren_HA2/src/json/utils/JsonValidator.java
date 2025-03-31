@@ -14,6 +14,13 @@ import com.networknt.schema.ValidationMessage;
 
 public class JsonValidator {
 
+	/**
+	 * Validiert eine JSON-Datei gegen ein JSON-Schema.
+	 *
+	 * @param jsonFilePath   Der Pfad zur JSON-Datei.
+	 * @param schemaFilePath Der Pfad zur JSON-Schema-Datei.
+	 * @return {@code true}, wenn die JSON-Datei gültig ist, sonst {@code false}.
+	 */
 	public static boolean validateJson(String jsonFilePath, String schemaFilePath) {
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();

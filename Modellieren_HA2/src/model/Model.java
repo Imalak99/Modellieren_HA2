@@ -44,8 +44,6 @@ public class Model {
 			System.out.println("Die Modelle sind gleich");
 		} else {
 			System.out.println("Die Modelle sind nicht gleich");
-			// hier könnte noch eine methode aufgerufen werden, welche die unterschiede
-			// ausgibt.
 		}
 		return check;
 	}
